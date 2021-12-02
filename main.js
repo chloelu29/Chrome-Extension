@@ -14,17 +14,19 @@ chrome.tabs.onUpdated.addListener(function(changeInfo) {
   }
 });
 
-searchUrbanDict = function(word){
-    var query = word.selectionText;
-    chrome.tabs.create({url: "http://www.urbandictionary.com/define.php?term=" + query});
-    // let test = document.createElement('list');
-    // test.innerText='asdasda'
-    // document.getElementById('body').appendChild(test)
-  };
-  searchWikipedia = function(word){
-    var query = word.selectionText;
-    chrome.tabs.create({url: "https://en.wikipedia.org/w/index.php?search=" + query + "&title=Special%3ASearch&go=Go"});
-  };
+//PART OF MANIFEST v2. DO NOT USE
+// searchUrbanDict = function(word){
+//     var query = word.selectionText;
+//     chrome.tabs.create({url: "http://www.urbandictionary.com/define.php?term=" + query});
+//     // let test = document.createElement('list');
+//     // test.innerText='asdasda'
+//     // document.getElementById('body').appendChild(test)
+//   };
+//   searchWikipedia = function(word){
+//     var query = word.selectionText;
+//     chrome.tabs.create({url: "https://en.wikipedia.org/w/index.php?search=" + query + "&title=Special%3ASearch&go=Go"});
+//   };
+  //PART OF MANIFEST v2. DO NOT USE
 
   chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
