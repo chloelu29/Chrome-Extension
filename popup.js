@@ -16,7 +16,7 @@ const init = function(){
 
     function addBlur(){
         for(img of imgList){
-            img.style.filter = 'blur(3px)';
+            img.style.filter = 'blur(10px)';
         }
     };
 
