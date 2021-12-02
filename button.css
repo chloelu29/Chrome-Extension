@@ -12,6 +12,8 @@
                 0 0 0 4px black;
   }
 
+
+
 .cls-context-menu-link {
     display:block;
     padding:20px;
@@ -39,3 +41,28 @@
     background:blue;
     color:#FFF;
  } */
+
+
+ .button1{
+  height: 30px;
+  width: 30px;
+  z-index: 999;
+  border-radius: 50%;
+  background-color: green;
+  position: fixed;
+  top: 100px;
+  left: 100px;
+ }
+
+ .button2{
+  height: 30px;
+  width: 30px;
+  z-index: 999;
+  border-radius: 50%;
+  background-color:red;
+  position: fixed;
+  top: 130px;
+  left: 100px;
+  
+ }
+

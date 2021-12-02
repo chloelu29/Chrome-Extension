@@ -5,6 +5,15 @@
 //   console.log('Default background color set to %cgreen', `color: ${color}`);
 // });
 
+chrome.tabs.onUpdated.addListener(function(changeInfo) {
+  console.log(changeInfo)
+    if (changeInfo.status === 'complete'){
+      chrome.tabs.executeScript({
+      file: 'popup.js' 
+    });
+  }
+});
+
 searchUrbanDict = function(word){
     var query = word.selectionText;
     chrome.tabs.create({url: "http://www.urbandictionary.com/define.php?term=" + query});
