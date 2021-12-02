@@ -26,6 +26,7 @@ searchUrbanDict = function(word){
     chrome.tabs.create({url: "https://en.wikipedia.org/w/index.php?search=" + query + "&title=Special%3ASearch&go=Go"});
   };
 
+  chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
       id: "UDMenu",
       title: "Search in UrbanDictionary",
@@ -38,8 +39,16 @@ searchUrbanDict = function(word){
       contexts:["selection"]
     });
 
+    chrome
+  });
+
   chrome.contextMenus.onClicked.addListener(function(selection) {
+    //selection is an object with menuItemId (the menu ids above), pageUrl (the tab's url that the selection was on), and selectionText (the selected text)
     console.log(selection);
+    
+    //if the menuItemIds match, create a new tab with the url
+    if (selection.menuItemId === 'UDMenu') chrome.tabs.create({url: "http://www.urbandictionary.com/define.php?term=" + selection.selectionText});
+    if (selection.menuItemId === 'wikiMenu') chrome.tabs.create({url: "https://en.wikipedia.org/w/index.php?search=" + selection.selectionText + "&title=Special%3ASearch&go=Go"});
    })
 
 
