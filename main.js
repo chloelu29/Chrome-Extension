@@ -8,22 +8,31 @@
 searchUrbanDict = function(word){
     var query = word.selectionText;
     chrome.tabs.create({url: "http://www.urbandictionary.com/define.php?term=" + query});
-    chrome.tabs.create({url: "https://en.wikipedia.org/w/index.php?search=" + query + "&title=Special%3ASearch&go=Go"});
+    // let test = document.createElement('list');
+    // test.innerText='asdasda'
+    // document.getElementById('body').appendChild(test)
   };
-  
-  chrome.contextMenus.create({
-    title: "Search in UrbanDictionary",
-    contexts:["selection"],
-    onclick: searchUrbanDict
-  });
-  
   searchWikipedia = function(word){
     var query = word.selectionText;
     chrome.tabs.create({url: "https://en.wikipedia.org/w/index.php?search=" + query + "&title=Special%3ASearch&go=Go"});
   };
+
+    chrome.contextMenus.create({
+      id: "UDMenu",
+      title: "Search in UrbanDictionary",
+      contexts:["selection"]      
+    });
+
+    chrome.contextMenus.create({
+      id: "wikiMenu",
+      title: "Search in Wikipedia",
+      contexts:["selection"]
+    });
+
+  chrome.contextMenus.onClicked.addListener(function(selection) {
+    console.log(selection);
+   })
+
+
   
-  chrome.contextMenus.create({
-    title: "Search in Wikipedia",
-    contexts:["selection"],
-    onclick: searchWikipedia
-  });
+ 

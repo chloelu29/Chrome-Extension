@@ -1,15 +1,31 @@
 {
-    "manifest_version": 2,
-    "name": "UrbanDictionary Search",
-    "short_name": "Search",
-    "description": "Searches for the selected text in the UrbanDictionary",
+    "manifest_version": 3,
+    "name": "Right Click to Pop Up",
+    "short_name": "RCPU",
+    "description": "Right Click to Pop Up",
     "version": "0.0.1",
-    "minimum_chrome_version": "38",
     "permissions": [
       "contextMenus", 
       "tabs"],
-    "icons": {
-      "16": "images/get_started16.png"
+
+    "background": {"service_worker": "main.js"},
+
+    "action": {
+      "default_popup": "popup.html",
+
+      "default_icon": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+      }
     },
-    "background": {"page": "background.html"}
+
+    "icons": {
+      "16": "/images/get_started16.png",
+      "32": "/images/get_started32.png",
+      "48": "/images/get_started48.png",
+      "128": "/images/get_started128.png"
+    }
+    
   }
